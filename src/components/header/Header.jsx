@@ -43,7 +43,7 @@ function Header() {
         <nav className="flex">
           <div className="mr-4">
             <Link to="/">
-              <Logo width="10%"/>
+              <Logo width="10%" />
             </Link>
           </div>
           <ul className="flex ml-auto">
@@ -71,4 +71,4 @@ function Header() {
   );
 }
 
-export default header;
+export default Header;
