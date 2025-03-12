@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { Outlet } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./store/authSlice";
-import Header from "./components/Header/Header";
-import Footer from "./components/footer/Footer";
+import Header from "./components/Header/Header.jsx";
+import Footer from "./components/footer/Footer.jsx";
 import authService from "./appwrite/auth";
 import Logo from "./components/Logo";
 
