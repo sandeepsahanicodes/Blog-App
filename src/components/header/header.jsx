@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "../container/Container.jsx";
-import { Logo } from "../Logo.jsx";
+import Container from "../container/Container.jsx";
+import Logo from "../Logo.jsx";
 import { Link } from "react-router-dom";
 import LogoutBtn from "./LogoutBtn.jsx";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ function header() {
     },
     {
       name: "All Posts",
-      slug: "/all-post",
+      slug: "/all-posts",
       active: authStatus,
     },
     {
@@ -43,7 +43,7 @@ function header() {
         <nav className="flex">
           <div className="mr-4">
             <Link to="/">
-              <Logo />
+              <Logo width="10%"/>
             </Link>
           </div>
           <ul className="flex ml-auto">

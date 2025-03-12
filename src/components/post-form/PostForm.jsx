@@ -72,7 +72,7 @@ export default function PostForm({ post }) {
           label="Title"
           placeholder="Title"
           className="mb-4"
-          {...register("title"),{required: true}}
+          {...register("title",{required: true})}
         />
         <Input 
         label="Slug :"
@@ -97,7 +97,7 @@ export default function PostForm({ post }) {
         type="file"
         className="mb-4"
         accept="image/png, image/jpg, image/jpeg"
-        {...register("image"), {required: !post}}
+        {...register("image", {required: !post})}
         />
         {post && (
             <div className="w-full mb-4">
