@@ -6,7 +6,7 @@ import LogoutBtn from "./LogoutBtn.jsx";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-function header() {
+function Header() {
   const authStatus = useSelector((state) => state.auth.status);
   const navigate = useNavigate();
 
