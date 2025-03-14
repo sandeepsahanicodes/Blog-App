@@ -17,6 +17,7 @@ function Login() {
 
   const login = async (data) => {
     setError("");
+    console.log("Tap on login btn");
     try {
       const session = await authService.login(data);
       if (session) {

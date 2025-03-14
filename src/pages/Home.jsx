@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config.js";
 import Container from "../components/container/Container.jsx";
 import PostCard from "../components/PostCard.jsx";
+import Message from "../components/Message.jsx";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -16,13 +17,14 @@ function Home() {
   if (posts.length === 0) {
     return (
       <div className="w-full py-8">
-      <Container>
-        <div className="flex felx-wrap">
-          <h1>Login to read posts</h1>
-        </div>
-      </Container>
-    </div>
-    ) 
+        <Container>
+          {/* <div className="flex felx-wrap">
+            <h1>Login to read posts</h1>
+          </div> */}
+          <Message />
+        </Container>
+      </div>
+    );
   }
   return (
     <div className="w-full py-8">
@@ -36,7 +38,7 @@ function Home() {
         </div>
       </Container>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
