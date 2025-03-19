@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config.js";
+import authService from "../appwrite/auth.js";
 import Container from "../components/container/Container.jsx";
 import PostCard from "../components/PostCard.jsx";
 import Message from "../components/Message.jsx";
+import { useSelector } from "react-redux";
 
 function Home() {
   const [posts, setPosts] = useState([]);
-
+  const isUserLoggedIn = useSelector((state) => state.auth.auth);
+  
   useEffect(() => {
     appwriteService.getPosts([]).then((posts) => {
       if (posts) {
@@ -18,10 +21,11 @@ function Home() {
     return (
       <div className="w-full py-8">
         <Container>
-          {/* <div className="flex felx-wrap">
-            <h1>Login to read posts</h1>
-          </div> */}
-          <Message />
+          {isUserLoggedIn ? (
+            <Message text="No post available!" />
+          ) : (
+            <Message text="Please login to see the posts" />
+          )}
         </Container>
       </div>
     );

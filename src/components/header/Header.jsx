@@ -59,11 +59,11 @@ function Header() {
                 </li>
               ) : null
             )}
-            {authStatus ? (
+            {authStatus && (
               <li>
                 <LogoutBtn />
               </li>
-            ) : null}
+            )}
           </ul>
         </nav>
       </Container>
