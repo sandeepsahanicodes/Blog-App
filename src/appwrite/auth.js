@@ -3,7 +3,7 @@ import { Client, Account, ID } from "appwrite";
 
 export class AuthService {
   client = new Client();
-
+  account;
   constructor() {
     this.client
       .setEndpoint(conf.appwriteUrl)
@@ -23,7 +23,7 @@ export class AuthService {
       );
       // console.log(email, password, name);
       if (userAccount) {
-        return this.login();
+        return this.login({ email, password });
       } else {
         return userAccount;
       }
